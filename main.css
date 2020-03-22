@@ -5,10 +5,17 @@
 }
 
 html {
-    transform: rotate(5deg); 
+    /* transform: rotate(3deg);  */
+}
+
+.storto {
+  transform: rotate(3deg); 
 }
 
 body {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: -24px;
     overflow: hidden;
   font-size: 16px;
   background-color: #000000;
@@ -24,11 +31,12 @@ body {
 
 .page-title {
   font-size: 2rem;
-  margin: 2rem;
 }
 .bio {
-    padding-left: 2vw;
-    padding-right: 2vw;
+  text-align: justify;
+    max-width: 768px;
+    margin-top: 2rem;
+    
 }
 .page-title__hi {
   font-size: 4rem;
@@ -61,9 +69,15 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 3em;
+  flex-wrap: wrap;
 }
 
+.icons {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
 .icons a {
   display: inline-block;
   text-decoration: none;
@@ -87,10 +101,12 @@ body {
   font-size: 1rem;
   animation: PulsedTextAnimation 4s linear infinite;
   border-radius: 22px;
-  border: 1px solid #e91e63;
-  font-weight: bold;
   transition: transform 200ms ease-in-out;
   will-change: transform;
+}
+.square-cv {
+  padding: 1rem;
+  font-size: 1.5rem;
 }
 .square:hover {
   transform: scale(1.05);
