@@ -5,18 +5,20 @@
 }
 
 html {
-    /* transform: rotate(3deg);  */
+  /* transform: rotate(3deg);  */
+  padding: 1rem;
+  overflow: hidden;
 }
 
 .storto {
-  transform: rotate(3deg); 
+  transform: rotate(3deg);
 }
 
 body {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
   margin-top: -24px;
-    overflow: hidden;
+  overflow: hidden;
   font-size: 16px;
   background-color: #000000;
   height: 100vh;
@@ -34,9 +36,8 @@ body {
 }
 .bio {
   text-align: justify;
-    max-width: 768px;
-    margin-top: 2rem;
-    
+  max-width: 768px;
+  margin-top: 2rem;
 }
 .page-title__hi {
   font-size: 4rem;
@@ -56,10 +57,10 @@ body {
   animation: CadiHi 3s ease-in-out;
 }
 .page-title__hi img {
-    will-change: transform;
-    transform-origin: 50% 100%;
-    animation: SmontaPara 4s ease-in-out;
-    visibility: hidden;
+  will-change: transform;
+  transform-origin: 50% 100%;
+  animation: SmontaPara 4s ease-in-out;
+  visibility: hidden;
 }
 .page-title__hi img {
   width: 55px;
@@ -107,6 +108,7 @@ body {
 .square-cv {
   padding: 1rem;
   font-size: 1.5rem;
+  margin-top: 2rem;
 }
 .square:hover {
   transform: scale(1.05);
@@ -245,23 +247,23 @@ body {
 }
 
 @keyframes SmontaPara {
-    0% {
-        visibility: visible;
-        transform: rotateX(0);
-    }
-    20% {
-        transform: rotateX(20deg);
-    }
-    40% {
-        transform: rotateX(0);
-    }
-    60% {
-        transform: rotateX(-40deg);
-    }
-    80% {
-        transform: rotateX(0);
-    }
-    100% {
-      transform: rotateX(-90deg) rotateY(60deg);
-    }
+  0% {
+    visibility: visible;
+    transform: rotateX(0);
   }
+  20% {
+    transform: rotateX(20deg);
+  }
+  40% {
+    transform: rotateX(0);
+  }
+  60% {
+    transform: rotateX(-40deg);
+  }
+  80% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-90deg) rotateY(60deg);
+  }
+}
