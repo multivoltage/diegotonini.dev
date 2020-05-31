@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Primary Meta Tags -->
     <title>Diego Tonini | Software developer</title>
-    <meta name="title" content="Diego Tonini | Software developer">
+    <meta name="title" content="Diego Tonini | Frontend developer">
     <meta name="description"
         content="I am a Software Developer. Currently interested in web app development, mainly with React ecosystem with international team and Agile methodology.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://diegotonini.dev/">
-    <meta property="og:title" content="Diego Tonini | Software developer">
+    <meta property="og:title" content="Diego Tonini | Frontend developer">
     <!-- <meta property="og:description"
         content="I am a Software Developer. Currently interested in web app development, mainly with React ecosystem with international team and Agile methodology.">
     <meta property="og:image" content="./assets/img/avatar.jpg">-->
@@ -22,10 +22,16 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://diegotonini.dev/">
-    <meta property="twitter:title" content="Diego Tonini | Software developer">
+    <meta property="twitter:title" content="Diego Tonini | Frontend developer">
     <!-- <meta property="twitter:description"
         content="I am a Software Developer. Currently interested in web app development, mainly with React ecosystem with international team and Agile methodology.">
     <meta property="twitter:image" content="./assets/img/avatar.jpg"> -->
+    <!-- status bar color -->
+    <meta name="theme-color" content="black">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="black">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="compiled.css" />
@@ -42,19 +48,25 @@
 </head>
 
 <body>
+
+    <div class="background">
+        <!-- filled by -->
+    </div>
+
     <header>
         <h1 class="page-title storto"><span class="page-title__hi">
                 <img src="./assets/para.png" alt="parachute icon" aria-hidden="true" />
                 <span>Hi,</span>
             </span>
             I am Diego Tonini</h1>
+
+        <a href="tel:+393891883138" class="my-phone">call me :)</a>
     </header>
 
     <main>
-        <h2 class="bio storto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consequuntur culpa sint
-            neque facere!
-            Laudantium placeat sunt quisquam ad vero! Veritatis inventore tenetur unde voluptatibus quidem, minus
-            cupiditate nesciunt illum.</h2>
+        <h2 class="bio storto">Yes, it's all wrong, but it could only be a point of view. Instead, it is objective that
+            I love anything related to technology, I am interested in crypto world and I am addicted to parachute jump
+        </h2>
         <div class="actions">
 
             <div class="icons storto">
@@ -76,8 +88,18 @@
                 </a>
                 </a>
 
+                <a href="https://t.me/diego_tonini" target="_blank" class="square square-icon" rel="noopener">
+                    <svg role="img" viewBox="0 0 24 24" viewBox="0 0 24 24" aria-hidden="true">
+                        <title>Telegram</title>
+                        <path
+                            d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z">
+                        </path>
+                    </svg>
+                </a>
+                </a>
+
                 <a href="mailto:diego.tonini93@gmail.com" class="square square-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <title>Gmail</title>
                         <path
                             d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z" />
@@ -96,6 +118,34 @@
     </main>
 
     <footer></footer>
+
+    <div id="cursor"></div>
+    <script type="text/javascript">
+        const exagonSize = 24
+        const exagonHeiht = 27
+        var background = document.getElementsByClassName('background')[0]
+
+        var necessaryItemsPerRow = Math.round(window.screen.availWidth / exagonSize) // not considering margin
+        var necessaryRow = Math.round(window.screen.availHeight / exagonHeiht) // not considring margin
+        const exagon = document.createElement('div')
+        exagon.classList.add('hexagon')
+
+        for (let row = 0; row < necessaryRow; row++) {
+            const rowEl = document.createElement('div')
+            rowEl.classList.add('row')
+            background.appendChild(rowEl)
+
+            for (let col = 0; col < necessaryItemsPerRow; col++) {
+                rowEl.appendChild(exagon.cloneNode())
+            }
+        }
+
+        var cursor = document.getElementById('cursor');
+        window.onmousemove = function (e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        }
+    </script>
 </body>
 
 </html>
