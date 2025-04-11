@@ -1,3 +1,5 @@
+
+
 /* icon from https://simpleicons.org/ */
 * {
   margin: 0;
@@ -14,10 +16,7 @@ header,
 main,
 footer {
   z-index: 2;
-}
-
-.storto {
-  transform: rotate(3deg);
+  position: relative;
 }
 
 body {
@@ -33,7 +32,7 @@ body {
   align-items: center;
   color: #ffffff;
   font-family: "Indie Flower", cursive;
-  text-rendering: optimizeLegibility;
+  
 }
 
 .my-phone {
@@ -299,7 +298,6 @@ body {
   height: 100vh;
   overflow: hidden;
   z-index: 2;
-  opacity: 0.4;
   opacity: 0;
   animation: appearBackground 1s linear;
   animation-fill-mode: forwards;
