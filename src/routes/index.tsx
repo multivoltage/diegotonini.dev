@@ -1,5 +1,7 @@
 import { createEffect, createSignal, For, onCleanup } from "solid-js";
 import paraImg from "../assets/para.png";
+import { Link } from "@solidjs/meta";
+import { A } from "@solidjs/router";
 
 export default function Home() {
   let backgroundElement!: HTMLDivElement;
@@ -74,9 +76,9 @@ export default function Home() {
 
       <main>
         <h2 class="bio storto">
-          Yes, it's all wrong, but it could only be a point of view. Instead, it
-          is objective that I love anything related to technology, I am
-          interested in crypto world and I am addicted to parachute jump
+          I'm a frontend developer who still enjoys writing code without AI. I
+          try to develop interesting things, and sometimes even open-source
+          projects. I'm a skydiver in my free time.
         </h2>
         <div class="actions">
           <div class="icons storto">
@@ -147,6 +149,24 @@ export default function Home() {
             CV / RESUME
           </a>
         </div>
+
+        <h3
+          style={{
+            "text-align": "center",
+            "margin-top": "3rem",
+            "margin-bottom": "3rem",
+          }}
+        >
+          or
+        </h3>
+        <h2>
+          You can visit the{" "}
+          <A class="square square-icon" href="/about">
+            <b>PILLS PAGE</b>
+          </A>{" "}
+          and read some article that I wrote each time I encountered a problem
+          in my job
+        </h2>
       </main>
 
       <footer></footer>
