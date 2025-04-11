@@ -1,6 +1,5 @@
-import { Title } from "@solidjs/meta";
 import { createEffect, createSignal, For, onCleanup } from "solid-js";
-import Counter from "~/components/Counter";
+import paraImg from "../assets/para.png";
 
 export default function Home() {
   let backgroundElement!: HTMLDivElement;
@@ -41,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <div class="background ciccio" ref={backgroundElement}>
+      <div class="background" ref={backgroundElement}>
         <For
           each={[...Array(rowsSettings().necessaryRow).keys()]}
           fallback={<div>Loading...</div>}
@@ -62,11 +61,7 @@ export default function Home() {
       <header>
         <h1 class="page-title storto">
           <span class="page-title__hi">
-            <img
-              src="./assets/para.png"
-              alt="parachute icon"
-              aria-hidden="true"
-            />
+            <img src={paraImg} alt="parachute icon" aria-hidden="true" />
             <span>Hi,</span>
           </span>
           I am Diego Tonini
