@@ -150,7 +150,7 @@ export default function Home() {
           </a>
         </div>
 
-        <h3
+        {/* <h3
           style={{
             "text-align": "center",
             "margin-top": "3rem",
@@ -161,12 +161,12 @@ export default function Home() {
         </h3>
         <h2>
           You can visit the{" "}
-          <A class="square square-icon" href="/about">
+          <A class="square square-icon" href="/pills">
             <b>PILLS PAGE</b>
           </A>{" "}
           and read some article that I wrote each time I encountered a problem
           in my job
-        </h2>
+        </h2> */}
       </main>
 
       <footer></footer>
