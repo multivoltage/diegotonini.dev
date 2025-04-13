@@ -2,6 +2,7 @@ import { createEffect, createSignal, For, onCleanup } from "solid-js";
 import paraImg from "../assets/para.png";
 import { Link } from "@solidjs/meta";
 import { A } from "@solidjs/router";
+import styles from "../home.module.css";
 
 export default function Home() {
   let backgroundElement!: HTMLDivElement;
@@ -20,10 +21,11 @@ export default function Home() {
   createEffect(() => {
     const exagonSize = 24;
     const exagonHeiht = 27;
-    var necessaryItemsPerRow = Math.round(
+    const necessaryItemsPerRow = Math.round(
       window.screen.availWidth / exagonSize
     ); // not considering margin
-    var necessaryRow = Math.round(window.screen.availHeight / exagonHeiht); // not considring margin
+    const necessaryRow =
+      Math.round(window.screen.availHeight / exagonHeiht) + 2; // not considring margin
     setRowSettings({
       necessaryItemsPerRow,
       necessaryRow,
@@ -41,51 +43,51 @@ export default function Home() {
   });
 
   return (
-    <>
-      <div class="background" ref={backgroundElement}>
+    <div class={styles.page}>
+      <div class={styles.background} ref={backgroundElement}>
         <For
           each={[...Array(rowsSettings().necessaryRow).keys()]}
           fallback={<div>Loading...</div>}
         >
           {(item) => (
-            <div class="row">
+            <div class={styles.row}>
               <For
                 each={[...Array(rowsSettings().necessaryItemsPerRow).keys()]}
                 fallback={<div>Loading...</div>}
               >
-                {(item) => <div class="hexagon"></div>}
+                {(item) => <div class={styles.hexagon}></div>}
               </For>
             </div>
           )}
         </For>
       </div>
 
-      <header>
-        <h1 class="page-title storto">
-          <span class="page-title__hi">
+      <header class={styles.header}>
+        <h1 class="page-title">
+          <span class={styles["page-title__hi"]}>
             <img src={paraImg} alt="parachute icon" aria-hidden="true" />
             <span>Hi,</span>
           </span>
           I am Diego Tonini
         </h1>
 
-        <a href="tel:+393891883138" class="my-phone">
+        <a href="tel:+393891883138" class={styles["my-phone"]}>
           call me :)
         </a>
       </header>
 
-      <main>
-        <h2 class="bio storto">
+      <main class={styles.main}>
+        <h2 class={styles.bio}>
           I'm a frontend developer who still enjoys writing code without AI. I
           try to develop interesting things, and sometimes even open-source
           projects. I'm a skydiver in my free time.
         </h2>
-        <div class="actions">
-          <div class="icons storto">
+        <div class={styles.actions}>
+          <div class={styles.icons}>
             <a
               href="https://www.linkedin.com/in/diego-tonini-6182a6114/"
               target="_blank"
-              class="square square-icon"
+              class={`${styles.square} ${styles["square-icon"]}`}
               rel="noopener"
             >
               <svg
@@ -100,7 +102,7 @@ export default function Home() {
             <a
               href="https://github.com/multivoltage"
               target="_blank"
-              class="square square-icon"
+              class={`${styles.square} ${styles["square-icon"]}`}
               rel="noopener"
             >
               <svg
@@ -116,7 +118,7 @@ export default function Home() {
             <a
               href="https://t.me/diego_tonini"
               target="_blank"
-              class="square square-icon"
+              class={`${styles.square} ${styles["square-icon"]}`}
               rel="noopener"
             >
               <svg role="img" viewBox="0 0 24 24" aria-hidden="true">
@@ -127,7 +129,7 @@ export default function Home() {
 
             <a
               href="mailto:diego.tonini93@gmail.com"
-              class="square square-icon"
+              class={`${styles.square} ${styles["square-icon"]}`}
             >
               <svg
                 role="img"
@@ -142,7 +144,7 @@ export default function Home() {
           </div>
 
           <a
-            class="square square-cv storto"
+            class={`${styles.square} ${styles["square-cv"]}`}
             href="https://github.com/multivoltage/mypersonal-cv/raw/master/Diego%20Tonini.pdf"
             download
           >
@@ -169,16 +171,16 @@ export default function Home() {
         </h2> */}
       </main>
 
-      <footer></footer>
+      <footer class={styles.footer}></footer>
 
       <div
-        id="cursor"
+        class={styles.cursor}
         ref={cursorElement}
         style={{
           left: `${cursorStyle().left}px`,
           top: `${cursorStyle().top}px`,
         }}
       ></div>
-    </>
+    </div>
   );
 }
