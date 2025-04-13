@@ -5,13 +5,8 @@ import { A } from "@solidjs/router";
 import styles from "../css/home.module.css";
 
 export default function Home() {
-  let backgroundElement!: HTMLDivElement;
   let cursorElement!: HTMLDivElement;
 
-  let [rowsSettings, setRowSettings] = createSignal<{
-    necessaryRow: number;
-    necessaryItemsPerRow: number;
-  }>({ necessaryRow: 0, necessaryItemsPerRow: 0 });
   let [cursorStyle, setCursorStyle] = createSignal<{
     top: number;
     left: number;
@@ -19,18 +14,6 @@ export default function Home() {
 
   // TODO try to put createRenderEffect
   createEffect(() => {
-    const exagonSize = 24;
-    const exagonHeiht = 27;
-    const necessaryItemsPerRow = Math.round(
-      window.screen.availWidth / exagonSize
-    ); // not considering margin
-    const necessaryRow =
-      Math.round(window.screen.availHeight / exagonHeiht) + 2; // not considring margin
-    setRowSettings({
-      necessaryItemsPerRow,
-      necessaryRow,
-    });
-
     function onMounseMove(e: MouseEvent) {
       setCursorStyle({ top: e.clientY, left: e.clientX });
     }
@@ -44,24 +27,6 @@ export default function Home() {
 
   return (
     <div class={styles.page}>
-      <div class={styles.background} ref={backgroundElement}>
-        <For
-          each={[...Array(rowsSettings().necessaryRow).keys()]}
-          fallback={<div>Loading...</div>}
-        >
-          {(item) => (
-            <div class={styles.row}>
-              <For
-                each={[...Array(rowsSettings().necessaryItemsPerRow).keys()]}
-                fallback={<div>Loading...</div>}
-              >
-                {(item) => <div class={styles.hexagon}></div>}
-              </For>
-            </div>
-          )}
-        </For>
-      </div>
-
       <header class={styles.header}>
         <h1 class="page-title">
           <span class={styles["page-title__hi"]}>
@@ -76,7 +41,7 @@ export default function Home() {
         </a>
       </header>
 
-      <main class={styles.main}>
+      <main class="main">
         <h2 class={styles.bio}>
           I'm a frontend developer who still enjoys writing code without AI. I
           try to develop interesting things, and sometimes even open-source

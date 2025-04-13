@@ -24,6 +24,11 @@ body {
   font-family: "Indie Flower", cursive; 
 }
 
+main {
+  z-index: 2;
+  position: relative;
+}
+
 @media (min-width: 1280px) {
   
 }

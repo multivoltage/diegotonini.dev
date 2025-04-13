@@ -4,6 +4,7 @@ import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
 import "./css/app.css";
 import { createGoogleTagManagerElement } from "./lib/createGoogleTagManagerElement";
+import ExagondlBackground from "./components/ExagondlBackground";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
           <Meta name="msapplication-navbutton-color" content="black" />
           <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
+          <ExagondlBackground />
           <Suspense>{props.children}</Suspense>
           <Suspense>{createGoogleTagManagerElement()}</Suspense>
         </MetaProvider>
