@@ -2,7 +2,7 @@ import { createEffect, createSignal, For, onCleanup } from "solid-js";
 import paraImg from "../assets/para.png";
 import { Link } from "@solidjs/meta";
 import { A } from "@solidjs/router";
-import styles from "../home.module.css";
+import styles from "../css/home.module.css";
 
 export default function Home() {
   let backgroundElement!: HTMLDivElement;
