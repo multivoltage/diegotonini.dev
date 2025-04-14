@@ -3,30 +3,11 @@ import paraImg from "../assets/para.png";
 import { Link } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 import styles from "../css/home.module.css";
+import CursorLight from "~/components/CursorLight";
 
 export default function Home() {
-  let cursorElement!: HTMLDivElement;
-
-  let [cursorStyle, setCursorStyle] = createSignal<{
-    top: number;
-    left: number;
-  }>({ top: 0, left: 0 });
-
-  // TODO try to put createRenderEffect
-  createEffect(() => {
-    function onMounseMove(e: MouseEvent) {
-      setCursorStyle({ top: e.clientY, left: e.clientX });
-    }
-
-    window.onmousemove = onMounseMove;
-
-    onCleanup(() => {
-      window.onmousemove = null;
-    });
-  });
-
   return (
-    <div class={styles.page}>
+    <div class="vertical-center-align">
       <header class={styles.header}>
         <h1 class="page-title">
           <span class={styles["page-title__hi"]}>
@@ -116,36 +97,10 @@ export default function Home() {
             CV / RESUME
           </a>
         </div>
-
-        {/* <h3
-          style={{
-            "text-align": "center",
-            "margin-top": "3rem",
-            "margin-bottom": "3rem",
-          }}
-        >
-          or
-        </h3>
-        <h2>
-          You can visit the{" "}
-          <A class="square square-icon" href="/pills">
-            <b>PILLS PAGE</b>
-          </A>{" "}
-          and read some article that I wrote each time I encountered a problem
-          in my job
-        </h2> */}
       </main>
 
       <footer class={styles.footer}></footer>
-
-      <div
-        class={styles.cursor}
-        ref={cursorElement}
-        style={{
-          left: `${cursorStyle().left}px`,
-          top: `${cursorStyle().top}px`,
-        }}
-      ></div>
+      <CursorLight />
     </div>
   );
 }
