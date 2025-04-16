@@ -29,6 +29,7 @@ export default function PillPage() {
 
   onMount(async () => {
     if (mainElement) {
+      await import("prismjs/themes/prism-okaidia.min.css");
       await import("prismjs/components/prism-typescript" as any);
       // await import("prismjs/plugins/line-numbers/prism-line-numbers" as any);
       // await import("prismjs/plugins/line-numbers/prism-line-numbers.css");

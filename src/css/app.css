@@ -1,7 +1,4 @@
 
-@import url('node_modules/prismjs/themes/prism-okaidia.min.css');
-
-
 
 html {
   padding: 1rem;
@@ -56,5 +53,5 @@ ul li::marker {
   margin: 0;
 }
 .structured-text pre {
-  font-size: .8em;
+  font-size: .8em!important;
 }
