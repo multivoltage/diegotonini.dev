@@ -18,7 +18,7 @@ export function PillList({ pills }: Props) {
               <p class={styles["date"]}>
                 {formatDate(new Date(pill.writedAt))}
               </p>
-              <A href={`/pills/${pill.id}`}>
+              <A href={`/pills/${pill.slug}`}>
                 <h2 class={styles["pillTitle"]}>{pill.title}</h2>
               </A>
 

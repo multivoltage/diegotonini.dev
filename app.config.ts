@@ -10,7 +10,7 @@ export default defineConfig({
       async "prerender:routes"(routes) {
         // 👈 This hook is called just before reading the routes array from previous line
         const pills = await getPills();
-        pills.forEach(({ id }) => routes.add(`/pills/${id}`));
+        pills.forEach(({ id, slug }) => routes.add(`/pills/${slug}`));
       },
     },
   },

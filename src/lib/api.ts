@@ -8,6 +8,7 @@ export const getPills = async () => {
         allPills {
           id
           title
+          slug
           writedAt
           smallDescription
           _publishedAt
@@ -51,10 +52,11 @@ export const getPillById = async (id: string) => {
 export const getPillBySlug = async (slug: string) => {
   "use server";
   const query = `
-        query Pill($slug: ItemId!) {
-          pill(filter: { id: { eq: $slug } }){
+        query Pill($slug: String!) {
+          pill(filter: { slug: { eq: $slug } }){
             id           
             title  
+            slug
             writedAt 
             smallDescription 
             descriptionProblem {

@@ -6,24 +6,24 @@ import {
   useParams,
 } from "@solidjs/router";
 import { onMount } from "solid-js";
-import { getPillById } from "~/lib/api";
+import { getPillById, getPillBySlug } from "~/lib/api";
 import { render } from "datocms-structured-text-to-html-string";
 import Prism from "prismjs";
 
-const getPillQuery = query(async (id: string) => {
+const getPillQuery = query(async (slug: string) => {
   "use server";
-  return getPillById(id);
+  return getPillBySlug(slug);
 }, "pill");
 
 export const route = {
   load: ({ params }) => {
-    return getPillById(params.id);
+    return getPillBySlug(params.slug);
   },
 } satisfies RouteDefinition;
 
 export default function PillPage() {
-  const { id } = useParams();
-  const pill = createAsync(() => getPillQuery(id));
+  const { slug } = useParams();
+  const pill = createAsync(() => getPillQuery(slug));
 
   let mainElement: HTMLDivElement | undefined;
 
