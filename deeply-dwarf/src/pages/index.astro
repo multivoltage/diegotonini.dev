@@ -1,0 +1,400 @@
+---
+import Layout from "../layouts/Layout.astro";
+import paraImg from "../assets/para.png";
+import { Image } from "astro:assets";
+import CursorLight from "../components/CursorLight.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout
+  title="Diego Tonini | Frontend developer"
+  description="I am a Software Developer. Currently interested in web app development, mainly with React ecosystem with international team and Agile methodology."
+>
+  <div class="vertical-center-align">
+    <header class="header">
+      <h1 class="page-title">
+        <span class="page-title__hi">
+          <Image src={paraImg} alt="parachute icon" aria-hidden="true" />
+          <span>Hi,</span>
+        </span>
+        I am Diego Tonini
+      </h1>
+
+      <a href="tel:+393891883138" class="my-phone"> call me :) </a>
+    </header>
+
+    <main class="main">
+      <h2 class="bio">
+        I'm a frontend developer who still enjoys writing code without AI. I try
+        to develop interesting things, and sometimes even open-source projects.
+        I'm a skydiver in my free time.
+      </h2>
+      <div class="actions">
+        <div class="icons">
+          <a
+            href="https://www.linkedin.com/in/diego-tonini-6182a6114/"
+            target="_blank"
+            class:list={["square", "square-icon"]}
+            rel="noopener"
+          >
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>LinkedIn</title>
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://github.com/multivoltage"
+            target="_blank"
+            class:list={["square", "square-icon"]}
+            rel="noopener"
+          >
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              ></path>
+            </svg>
+          </a>
+
+          <a
+            href="https://t.me/diego_tonini"
+            target="_blank"
+            class:list={["square", "square-icon"]}
+            rel="noopener"
+          >
+            <svg role="img" viewBox="0 0 24 24" aria-hidden="true">
+              <title>Telegram</title>
+              <path
+                d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"
+              ></path>
+            </svg>
+          </a>
+
+          <a
+            href="mailto:diego.tonini93@gmail.com"
+            class:list={["square", "square-icon"]}
+          >
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <title>Gmail</title>
+              <path
+                d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <a
+          class:list={["square", "square-cv"]}
+          href="https://github.com/multivoltage/mypersonal-cv/raw/master/Diego%20Tonini.pdf"
+          download
+        >
+          CV / RESUME
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer"></footer>
+  </div>
+</Layout>
+<style>
+  main {
+    z-index: 2;
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .header,
+  .footer {
+    z-index: 2;
+    position: relative;
+  }
+
+  .my-phone {
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 200px;
+    color: black;
+    transition: color 300ms linear;
+  }
+  .my-phone:hover {
+    color: white;
+  }
+
+  .bio {
+    text-align: justify;
+    max-width: 768px;
+    margin-top: 2rem;
+  }
+  .page-title__hi {
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transform-origin: 50% 35%;
+    will-change: transform;
+    animation: CadiWrapper 3s ease-in-out;
+  }
+  .page-title__hi span {
+    margin-top: -29px;
+    margin-left: -20px;
+    will-change: transform;
+    transform-origin: 70% 28%;
+    animation: CadiHi 3s ease-in-out;
+  }
+  .page-title__hi img {
+    will-change: transform;
+    transform-origin: 50% 100%;
+    animation: SmontaPara 4s ease-in-out;
+    visibility: hidden;
+  }
+  .page-title__hi img {
+    width: 55px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .icons {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .icons a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .icons svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    vertical-align: middle;
+  }
+  /** pulsed components */
+  .square {
+    color: white;
+    letter-spacing: 12px;
+    position: relative;
+    background: black;
+    opacity: 0.95;
+    padding: 1.5em;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    animation: PulsedTextAnimation 4s linear infinite;
+    border-radius: 22px;
+    transition: transform 200ms ease-in-out;
+    will-change: transform;
+  }
+  .square-cv {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  .square:hover {
+    transform: scale(1.05);
+  }
+  .square.square-icon {
+    padding: 0;
+    margin: 0 16px 0 16px;
+    border: none;
+  }
+  .square.square-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .square::before {
+    filter: blur(10px);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 20px);
+    height: calc(100% + 16px);
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    background: linear-gradient(
+        217deg,
+        rgba(255, 0, 0, 0.8),
+        rgba(255, 0, 0, 0) 70.71%
+      ),
+      linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    -webkit-animation: PulsedButtonAnimation 4s linear infinite;
+    -moz-animation: PulsedButtonAnimation 4s linear infinite;
+    animation: PulsedButtonAnimation 4s linear infinite;
+    background-size: 400% 400%;
+  }
+
+  .square::after {
+    filter: blur(0);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background: black;
+  }
+  .square.square-icon::after {
+    background: transparent;
+  }
+
+  @-webkit-keyframes PulsedButtonAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes PulsedButtonAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes PulsedButtonAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /** animation text **/
+  @keyframes PulsedTextAnimation {
+    0% {
+      color: rgba(255, 0, 0, 0.8);
+    }
+    33% {
+      color: rgba(0, 255, 0, 0.8);
+    }
+    66% {
+      color: rgba(0, 0, 255, 0.8);
+    }
+    100% {
+      color: rgba(255, 0, 0, 0.8);
+    }
+  }
+
+  @keyframes CadiWrapper {
+    0% {
+      transform: translateX(200px) translateY(-200%) rotate(25deg);
+    }
+    25% {
+      transform: translateX(150px) translateY(-150%) rotate(-25deg);
+    }
+    50% {
+      transform: translateX(120px) translateY(-100%) rotate(10deg);
+    }
+    75% {
+      transform: translateX(50px) translateY(-50%) rotate(-35deg);
+    }
+    100% {
+      transform: translateX(0) translateY(0) rotate(0);
+    }
+  }
+  @keyframes CadiHi {
+    0% {
+      transform: rotate(25deg);
+    }
+    25% {
+      transform: rotate(-25deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-35deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  @keyframes SmontaPara {
+    0% {
+      visibility: visible;
+      transform: rotateX(0);
+    }
+    20% {
+      transform: rotateX(20deg);
+    }
+    40% {
+      transform: rotateX(0);
+    }
+    60% {
+      transform: rotateX(-40deg);
+    }
+    80% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(-90deg) rotateY(60deg);
+    }
+  }
+  .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw * 20 / 100);
+    opacity: 0.4;
+    height: calc(100vw * 20 / 100);
+    background: #0f0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: animate 4s linear infinite;
+    z-index: 1;
+  }
+  @keyframes animate {
+    0% {
+      filter: hue-rotate(0deg) blur(50px);
+    }
+    100% {
+      filter: hue-rotate(360deg) blur(50px);
+    }
+  }
+</style>

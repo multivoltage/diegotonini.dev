@@ -1,0 +1,134 @@
+---
+import CursorLight from "../components/CursorLight.astro";
+import ExagondlBackground from "../components/ExagondlBackground.astro";
+
+const isProd = import.meta.env.PROD;
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Default description" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower&display=block"
+    />
+
+    <meta name="description" content={description} />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Diego Tonini | Frontend developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://diegotonini.dev/" />
+    <meta
+      property="og:description"
+      content="Diego Tonini | Frontend developer"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://diegotonini.dev/" />
+    <meta
+      property="twitter:title"
+      content="Diego Tonini | Frontend developer"
+    />
+
+    <meta name="theme-color" content="black" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    {
+      isProd && (
+        <script
+          is:inline
+          type="text/partytown"
+          src="https://www.googletagmanager.com/gtag/js?id=UA-67132612-4"
+        />
+      )
+    }
+
+    <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-67132612-4");
+    </script>
+  </head>
+  <body>
+    <ExagondlBackground />
+    <CursorLight />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    padding: 1rem;
+  }
+
+  body {
+    font-size: 16px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Indie Flower", cursive;
+  }
+
+  body:has(.vertical-center-align) {
+    margin-top: -24px;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    z-index: 2;
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1 {
+    line-height: 120%;
+  }
+
+  @media (min-width: 1280px) {
+  }
+
+  ul li::marker {
+    margin-top: 2rem;
+    position: absolute;
+    padding-left: 3rem !important;
+    padding-top: 2rem !important;
+  }
+
+  .structured-text ol p,
+  .structured-text ul p {
+    margin: 0;
+  }
+  .structured-text pre {
+    font-size: 0.8em !important;
+  }
+</style>

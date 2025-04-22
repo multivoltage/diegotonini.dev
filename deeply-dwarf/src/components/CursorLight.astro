@@ -1,0 +1,40 @@
+<div id="cursor"></div>
+<script>
+  const cursorEl = document.getElementById("cursor");
+  if (cursorEl) {
+    let top = -4000;
+    let left = -4000;
+    cursorEl.style.top = top + "px";
+    cursorEl.style.left = left + "px";
+
+    function onMounseMove(e: MouseEvent) {
+      cursorEl!.style.top = e.clientY + "px";
+      cursorEl!.style.left = e.clientX + "px";
+    }
+
+    window.addEventListener("mousemove", onMounseMove, { passive: true });
+  }
+</script>
+<style>
+  #cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw * 20 / 100);
+    opacity: 0.4;
+    height: calc(100vw * 20 / 100);
+    background: #0f0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: animate 4s linear infinite;
+    z-index: 1;
+  }
+  @keyframes animate {
+    0% {
+      filter: hue-rotate(0deg) blur(50px);
+    }
+    100% {
+      filter: hue-rotate(360deg) blur(50px);
+    }
+  }
+</style>
