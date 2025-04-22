@@ -1,23 +1,21 @@
 {
-  "name": "example-basic",
+  "name": "diegotonini.dev",
+  "description": "Diego Tonini's personal website",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start",
-    "version": "vinxi version"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@solid-primitives/script-loader": "^2.3.0",
-    "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.15.0",
-    "@solidjs/start": "^1.1.0",
+    "@astrojs/partytown": "^2.1.4",
+    "astro": "^5.7.4",
     "datocms-structured-text-to-html-string": "^5.0.0",
     "datocms-structured-text-utils": "^5.0.0",
     "graphql-request": "^7.1.2",
-    "prismjs": "^1.30.0",
-    "solid-js": "^1.9.5",
-    "vinxi": "^0.5.3"
+    "prismjs": "^1.30.0"
   },
   "engines": {
     "node": ">=22"
