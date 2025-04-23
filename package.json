@@ -12,10 +12,13 @@
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
     "astro": "^5.7.4",
+    "build": "^0.1.4",
     "datocms-structured-text-to-html-string": "^5.0.0",
     "datocms-structured-text-utils": "^5.0.0",
     "graphql-request": "^7.1.2",
-    "prismjs": "^1.30.0"
+    "npm": "^11.3.0",
+    "prismjs": "^1.30.0",
+    "run": "^1.5.0"
   },
   "engines": {
     "node": ">=22"
