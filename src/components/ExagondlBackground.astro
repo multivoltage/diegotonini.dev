@@ -10,7 +10,7 @@ import background from "../assets/background.svg";
   const necessaryItemsPerRow = Math.round(
     window.screen.availWidth / exagonSize
   ); // not considering margin
-  const necessaryRow = Math.round(window.screen.availHeight / exagonHeiht) + 2; // not considring margin
+  const necessaryRow = Math.round(window.screen.availHeight / exagonHeiht) + 5; // not considring margin
   const backgroundEl = document.getElementById("background");
 
   if (backgroundEl) {
@@ -41,6 +41,7 @@ import background from "../assets/background.svg";
     animation-fill-mode: forwards;
     animation-delay: 300ms;
     pointer-events: none;
+    font-family: fantasy;
   }
   @keyframes appearBackground {
     0% {

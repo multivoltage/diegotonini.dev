@@ -25,7 +25,7 @@ const { title, description = "Default description" } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Indie+Flower&display=block"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"
     />
 
     <meta name="description" content={description} />
@@ -76,11 +76,20 @@ const { title, description = "Default description" } = Astro.props;
     padding: 1rem;
   }
 
+  @font-face {
+    font-family: "Indie Flower Fallback";
+    src: local(Arial);
+    size-adjust: 93%;
+    ascent-override: 102%;
+    descent-override: 60%;
+    line-gap-override: 0%;
+  }
+
   body {
     font-size: 16px;
     background-color: #000000;
     color: #ffffff;
-    font-family: "Indie Flower", cursive;
+    font-family: "Indie Flower", "Indie Flower Fallback", cursive;
   }
 
   body:has(.vertical-center-align) {
