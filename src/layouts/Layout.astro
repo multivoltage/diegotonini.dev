@@ -3,7 +3,7 @@ import CursorLight from "../components/CursorLight.astro";
 import ExagondlBackground from "../components/ExagondlBackground.astro";
 
 const isProd = import.meta.env.PROD;
-
+console.log;
 interface Props {
   title: string;
   description?: string;
@@ -50,24 +50,18 @@ const { title, description = "Default description" } = Astro.props;
     <meta name="msapplication-navbutton-color" content="black" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    {
-      isProd && (
-        <script
-          is:inline
-          type="text/partytown"
-          src="https://www.googletagmanager.com/gtag/js?id=UA-67132612-4"
-        />
-      )
-    }
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QB5XRN7Z3P"></script>
 
-    <script is:inline type="text/partytown">
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
-      gtag("config", "UA-67132612-4");
+      gtag("config", "G-QB5XRN7Z3P");
     </script>
   </head>
   <body>
