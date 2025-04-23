@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getPills } from "../lib/api";
+import { formatDate } from "../lib/utils";
+
+const pills = await getPills();
+---
+
+<Layout
+  title="Diego Tonini | Pills"
+  description="A list of some problems I solved with code at my job."
+>
+  <main>
+    <h1 class="pageTitle">
+      During my work I encountered some problems that objectively made me lose
+      time. It could be useful to someone even if AI exists
+    </h1>
+
+    <ul class="list">
+      {
+        pills.map((pill) => {
+          return (
+            <li>
+              <p class="date">{formatDate(new Date(pill.writedAt))}</p>
+              <a href={`/pills/${pill.slug}`} data-astro-prefetch>
+                <h2 class="pillTitle">{pill.title}</h2>
+              </a>
+
+              <p class="smallDescription">{pill.smallDescription}</p>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .list {
+    margin-top: 1rem;
+    padding: 0;
+    padding-top: 1rem;
+  }
+  .list li {
+    position: relative;
+  }
+
+  .date {
+    opacity: 0.5;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -3rem;
+  }
+
+  .smallDescription {
+    margin-top: 0;
+  }
+</style>

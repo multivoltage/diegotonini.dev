@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getPillBySlug, getPills } from "../../lib/api";
+import { render } from "datocms-structured-text-to-html-string";
+export async function getStaticPaths() {
+  const pills = await getPills();
+
+  return pills.map((pill) => {
+    return {
+      params: { slug: pill.slug },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const pill = await getPillBySlug(slug);
+
+const renderedProblem = render(pill.descriptionProblem);
+const renderedSolution = render(pill.descriptionSolution);
+---
+
+<Layout title={pill.title} description={pill.smallDescription}>
+  <main>
+    <h2>The problem:</h2>
+    <div class="structured-text" set:html={renderedProblem} />
+
+    <hr />
+    <h2>The solution (my solution):</h2>
+    <div class="structured-text" set:html={renderedSolution} />
+  </main>
+</Layout>
+
+<script>
+  import Prism from "prismjs";
+  import "prismjs/themes/prism-okaidia.min.css";
+  import "prismjs/components/prism-typescript";
+  // await "prismjs/plugins/line-numbers/prism-line-numbers";
+  // await "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+  const mainEl = document.querySelector("main");
+  const preBlocks = !!mainEl && mainEl.querySelectorAll("pre");
+  if (preBlocks) {
+    preBlocks.forEach((preBlock) => {
+      const language = preBlock.getAttribute("data-language");
+      preBlock.classList.add(`language-${language}`, "line-numbers");
+      const codeBlocks = preBlock.querySelectorAll("code");
+      codeBlocks.forEach((codeBlock) => {
+        Prism.highlightElement(codeBlock);
+      });
+    });
+  }
+</script>
+
+<style>
+  .list {
+    margin-top: 1rem;
+    padding: 0;
+    padding-top: 1rem;
+  }
+  .list li {
+    position: relative;
+  }
+
+  .date {
+    opacity: 0.5;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -3rem;
+  }
+
+  .smallDescription {
+    margin-top: 0;
+  }
+</style>

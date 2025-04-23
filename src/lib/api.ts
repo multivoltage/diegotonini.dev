@@ -1,4 +1,4 @@
-import { Pill } from "~/types";
+import { type Pill } from "../types";
 import { client } from "./datocmsClient";
 
 export const getPills = async () => {
