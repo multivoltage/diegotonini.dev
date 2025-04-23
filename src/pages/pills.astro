@@ -22,7 +22,7 @@ const pills = await getPills();
           return (
             <li>
               <p class="date">{formatDate(new Date(pill.writedAt))}</p>
-              <a href={`/pills/${pill.slug}`}>
+              <a href={`/pills/${pill.slug}`} data-astro-prefetch>
                 <h2 class="pillTitle">{pill.title}</h2>
               </a>
 
