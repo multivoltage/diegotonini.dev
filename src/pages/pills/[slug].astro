@@ -21,7 +21,7 @@ const renderedSolution = render(pill.descriptionSolution);
 
 <Layout title={pill.title} description={pill.smallDescription}>
   <main>
-    <h2>The problem:</h2>
+    <h2 class="title">The problem:</h2>
     <div class="structured-text" set:html={renderedProblem} />
 
     <hr />
@@ -52,6 +52,9 @@ const renderedSolution = render(pill.descriptionSolution);
 </script>
 
 <style>
+  .title {
+    font-size: 28px;
+  }
   .list {
     margin-top: 1rem;
     padding: 0;
